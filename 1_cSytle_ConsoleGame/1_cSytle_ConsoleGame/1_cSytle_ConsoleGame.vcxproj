@@ -139,11 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="screen.cpp" />
     <ClCompile Include="ShootGoal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="make.h" />
     <ClInclude Include="ref.h" />
+    <ClInclude Include="screen.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src.txt" />
