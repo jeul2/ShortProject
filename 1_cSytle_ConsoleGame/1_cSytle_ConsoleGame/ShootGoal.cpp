@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <conio.h>
 
 #include "ref.h"
 #include "make.h"
@@ -11,19 +12,23 @@ void fnUpdate();
 void fnRender();
 void fnRelease();
 
+int fnInputKeyChk();
+
 int main()
 {
 	clock_t tPreTime(0);
 	clock_t tCurrrentTime(0);
 
+	int nInput(0);
 
 
 	//////////
 	fnInitial();
 
 	tPreTime = clock();
-	while (1)
+	while (nInput != -1)
 	{
+		nInput = fnInputKeyChk();
 
 		fnUpdate();
 		fnRender();
@@ -37,12 +42,54 @@ int main()
 				break;
 			}
 		}
-
-
 	}
 
 
 	fnRelease();
 	//////////
 	return 0;
+}
+
+void fnInitial()
+{
+	ScreenInit();
+}
+
+void fnUpdate()
+{
+}
+
+void fnRender()
+{
+	ScreenClear();
+	//printing Screen
+
+
+	//
+	ScreenFlipping();
+}
+
+void fnRelease()
+{
+	ScreenRelease();
+}
+
+int fnInputKeyChk()
+{
+	int nKey(0);
+
+	if (_kbhit())
+	{
+		nKey = _getch();
+		if (nKey == 'q')
+			return -1;
+		else if (nKey == 'j')
+			return 1;
+		else if (nKey == 'l')
+			return 2;
+		else if (nKey == 'k')
+			return 3;
+	}
+	else
+		return 0;
 }

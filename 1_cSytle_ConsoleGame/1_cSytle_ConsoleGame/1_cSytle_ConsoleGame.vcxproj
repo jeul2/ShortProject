@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="make.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="ref.h" />
     <ClInclude Include="screen.h" />
   </ItemGroup>
