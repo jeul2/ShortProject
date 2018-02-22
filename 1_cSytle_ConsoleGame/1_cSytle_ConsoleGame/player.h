@@ -7,6 +7,9 @@ struct S_PLAYER
 	int nMoveY;
 	int nX;
 	int nY;
+
+	char strPlayer[5];
+	int nPlayerLength;
 };
 
-void fnInitialPlayer();
+void fnInitialPlayer(S_PLAYER *pSrc);
